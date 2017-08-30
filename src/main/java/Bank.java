@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 
-/**
- * Created by Mykola on 30.08.2017.
- */
+
 public class Bank {
+    BankName bankName;
     ArrayList<Credit>credits;
 
-    public Bank(ArrayList<Credit> credits) {
+    public Bank(BankName bankName, ArrayList<Credit> credits) {
+        this.bankName = bankName;
         this.credits = credits;
+    }
+
+    public void addCredit(Credit credit) {
+        this.credits.add(credit);
     }
 }
