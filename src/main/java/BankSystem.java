@@ -1,6 +1,6 @@
 public class BankSystem {
 
-    public void changeTermsOfCredit(Credit credit, Double newTerm) {
+    public void changeTermsOfCredit(Credit credit, Integer newTerm) {
         if (credit.getCreditSpec().isPossibilityToChangeTerms()) {
             credit.getCreditSpec().setTermOfCreditingMonths(newTerm);
             credit.calculateAmountOfPaymentPerMonth();

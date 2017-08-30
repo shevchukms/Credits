@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 public class Banks {
-    ArrayList<Bank> banks=new ArrayList<Bank>();
+    HashSet<Bank> banks=new HashSet<Bank>();
 
     public void addBank(Bank bank) {
         this.banks.add(bank);
@@ -20,7 +21,7 @@ public class Banks {
     @Override
     public String toString() {
         return "Banks{" +
-                "banks=" + banks.toString() +
+                "banks=\n" + banks.toString() +
                 '}';
     }
 }

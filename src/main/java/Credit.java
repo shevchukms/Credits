@@ -1,7 +1,7 @@
 public class Credit {
     protected boolean isActive = true;
     protected Double valueOfCredit;
-    protected Double valueOfPayedCreditedMoney;
+    protected Double valueOfPayedCreditedMoney=0.0;
     protected CreditSpec creditSpec;
     protected Double amountOfPaymentPerMonth;
 
@@ -10,6 +10,11 @@ public class Credit {
         this.creditSpec = creditSpec;
         calculateAmountOfPaymentPerMonth();
     }
+
+    public Double calculateTheEntireAamountToPayForLoan(){
+        return valueOfCredit-valueOfPayedCreditedMoney+valueOfCredit*(creditSpec.getInterestRate()/100)/12;
+    }
+
 
     public void payMoney(Double money) {
         if (this.isActive) {

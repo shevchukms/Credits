@@ -17,9 +17,9 @@ public class Bank {
     @Override
     public String toString() {
         return "Bank{" +
-                "bankName=" + bankName +
-                ", credits=" + printCredits() +
-                '}';
+                "\nbankName=" + bankName +
+                ",credits=\n" + printCredits() +
+               "}" ;
     }
 
     public String printCredits() {

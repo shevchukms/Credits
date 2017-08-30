@@ -1,17 +1,17 @@
 public class CreditSpec {
     protected Double interestRate;
-    protected Double termOfCreditingMonths;
+    protected Integer termOfCreditingMonths;
     protected boolean possibilityOfEarlyRepayment = false;
     protected boolean possibilityToChangeTerms = false;
     protected CreditAim creditAim;
 
-    public CreditSpec(Double interestRate, Double termOfCreditingMonths, CreditAim creditAim) {
+    public CreditSpec(Double interestRate, Integer termOfCreditingMonths, CreditAim creditAim) {
         this.interestRate = interestRate;
         this.termOfCreditingMonths = termOfCreditingMonths;
         this.creditAim = creditAim;
     }
 
-    public CreditSpec(Double interestRate, Double termOfCreditingMonths, CreditAim creditAim, boolean possibilityOfEarlyRepayment, boolean possibilityToChangeTerms) {
+    public CreditSpec(Double interestRate, Integer termOfCreditingMonths, CreditAim creditAim, boolean possibilityOfEarlyRepayment, boolean possibilityToChangeTerms) {
         this.interestRate = interestRate;
         this.termOfCreditingMonths = termOfCreditingMonths;
         this.possibilityOfEarlyRepayment = possibilityOfEarlyRepayment;
@@ -19,7 +19,7 @@ public class CreditSpec {
         this.creditAim = creditAim;
     }
 
-    public void setTermOfCreditingMonths(Double termOfCreditingMonths) {
+    public void setTermOfCreditingMonths(Integer termOfCreditingMonths) {
         if (isPossibilityToChangeTerms()) {
             this.termOfCreditingMonths = termOfCreditingMonths;
         }
@@ -40,7 +40,7 @@ public class CreditSpec {
     }
 
 
-    public Double getTermOfCreditingMonths() {
+    public Integer getTermOfCreditingMonths() {
         return termOfCreditingMonths;
     }
 
