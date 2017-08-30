@@ -1,6 +1,4 @@
-/**
- * Created by Mykola on 30.08.2017.
- */
+
 public class CreditSpec {
     protected  Double interestRate;
     protected  Double termOfCrediting;
