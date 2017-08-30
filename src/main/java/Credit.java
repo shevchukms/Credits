@@ -23,7 +23,7 @@ public class Credit {
     }
 
     public void calculateAmountOfPaymentPerMonth() {
-        this.amountOfPaymentPerMonth = valueOfCredit / creditSpec.getTermOfCrediting() + valueOfCredit * (creditSpec.getInterestRate() / 100) / 12;
+        this.amountOfPaymentPerMonth = valueOfCredit / creditSpec.getTermOfCreditingMonths() + valueOfCredit * (creditSpec.getInterestRate() / 100) / 12;
     }
 
     public Double getValueOfCredit() {
@@ -39,7 +39,7 @@ public class Credit {
         return "Credit{" +
                 "value Of Credit=" + valueOfCredit +
                 ", credit interest rate =" + String.valueOf(creditSpec.getInterestRate()) +
-                ", Term Of Crediting =" + String.valueOf(creditSpec.getTermOfCrediting()) +
+                ", Term Of Crediting =" + String.valueOf(creditSpec.getTermOfCreditingMonths()) +
                 ", Possibility Of Early Repayment =" + String.valueOf(creditSpec.isPossibilityOfEarlyRepayment()) +
                 ", Possibility To Make Longer Terms =" + String.valueOf(creditSpec.isPossibilityToChangeTerms()) +
                 ", credit aim =" + String.valueOf(creditSpec.getCreditAim()) +
