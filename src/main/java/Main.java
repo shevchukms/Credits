@@ -11,6 +11,8 @@ public class Main {
         listOfBanks.getBank(BankName.KREDOBANK).addCredit(new Credit((double) 1000,new CreditSpec( 11.0, 18.0,CreditAim.FORHOMETECHNICS)));
 
 
+
+
         System.out.println(listOfBanks.toString());
 
 

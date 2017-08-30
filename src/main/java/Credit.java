@@ -1,11 +1,29 @@
-
 public class Credit {
+    protected boolean isActive = true;
     protected Double valueOfCredit;
+    protected Double valueOfPayedCreditedMoney;
     protected CreditSpec creditSpec;
+    protected Double amountOfPaymentPerMonth;
 
     public Credit(Double valueOfCredit, CreditSpec creditSpec) {
         this.valueOfCredit = valueOfCredit;
         this.creditSpec = creditSpec;
+        calculateAmountOfPaymentPerMonth();
+    }
+
+    public void payMoney(Double money) {
+        if (this.isActive) {
+            valueOfPayedCreditedMoney += money;
+            if (valueOfPayedCreditedMoney >= valueOfCredit) {
+                isActive = false;
+            } else {
+                calculateAmountOfPaymentPerMonth();
+            }
+        }
+    }
+
+    public void calculateAmountOfPaymentPerMonth() {
+        this.amountOfPaymentPerMonth = valueOfCredit / creditSpec.getTermOfCrediting() + valueOfCredit * (creditSpec.getInterestRate() / 100) / 12;
     }
 
     public Double getValueOfCredit() {
@@ -21,8 +39,10 @@ public class Credit {
         return "Credit{" +
                 "value Of Credit=" + valueOfCredit +
                 ", credit interest rate =" + String.valueOf(creditSpec.getInterestRate()) +
-                ", credit interest rate =" + String.valueOf(creditSpec.getTermOfCrediting()) +
-                ", credit interest rate =" + String.valueOf(creditSpec.getCreditAim()) +
+                ", Term Of Crediting =" + String.valueOf(creditSpec.getTermOfCrediting()) +
+                ", Possibility Of Early Repayment =" + String.valueOf(creditSpec.isPossibilityOfEarlyRepayment()) +
+                ", Possibility To Make Longer Terms =" + String.valueOf(creditSpec.isPossibilityToChangeTerms()) +
+                ", credit aim =" + String.valueOf(creditSpec.getCreditAim()) +
                 '}';
     }
 }

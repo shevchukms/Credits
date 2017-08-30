@@ -2,7 +2,7 @@ public class CreditSpec {
     protected Double interestRate;
     protected Double termOfCrediting;
     protected boolean possibilityOfEarlyRepayment = false;
-    protected boolean possibilityToMakeLongerTerms = false;
+    protected boolean possibilityToChangeTerms = false;
     protected CreditAim creditAim;
 
     public CreditSpec(Double interestRate, Double termOfCrediting, CreditAim creditAim) {
@@ -11,12 +11,18 @@ public class CreditSpec {
         this.creditAim = creditAim;
     }
 
-    public CreditSpec(Double interestRate, Double termOfCrediting, CreditAim creditAim, boolean possibilityOfEarlyRepayment, boolean possibilityToMakeLongerTerms) {
+    public CreditSpec(Double interestRate, Double termOfCrediting, CreditAim creditAim, boolean possibilityOfEarlyRepayment, boolean possibilityToChangeTerms) {
         this.interestRate = interestRate;
         this.termOfCrediting = termOfCrediting;
         this.possibilityOfEarlyRepayment = possibilityOfEarlyRepayment;
-        this.possibilityToMakeLongerTerms = possibilityToMakeLongerTerms;
+        this.possibilityToChangeTerms = possibilityToChangeTerms;
         this.creditAim = creditAim;
+    }
+
+    public void setTermOfCrediting(Double termOfCrediting) {
+        if (isPossibilityToChangeTerms()) {
+            this.termOfCrediting = termOfCrediting;
+        }
     }
 
     public Double getInterestRate() {
@@ -27,17 +33,12 @@ public class CreditSpec {
         return possibilityOfEarlyRepayment;
     }
 
-    public void setPossibilityOfEarlyRepayment(boolean possibilityOfEarlyRepayment) {
-        this.possibilityOfEarlyRepayment = possibilityOfEarlyRepayment;
+
+
+    public boolean isPossibilityToChangeTerms() {
+        return possibilityToChangeTerms;
     }
 
-    public boolean isPossibilityToMakeLongerTerms() {
-        return possibilityToMakeLongerTerms;
-    }
-
-    public void setPossibilityToMakeLongerTerms(boolean possibilityToMakeLongerTerms) {
-        this.possibilityToMakeLongerTerms = possibilityToMakeLongerTerms;
-    }
 
     public Double getTermOfCrediting() {
         return termOfCrediting;
