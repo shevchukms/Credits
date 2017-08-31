@@ -4,11 +4,20 @@ public class Credit {
     protected Double valueOfPayedCreditedMoney=0.0;
     protected CreditSpec creditSpec;
     protected Double amountOfPaymentPerMonth;
+    protected Client client;
 
     public Credit(Double valueOfCredit, CreditSpec creditSpec) {
         this.valueOfCredit = valueOfCredit;
         this.creditSpec = creditSpec;
         calculateAmountOfPaymentPerMonth();
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Double calculateTheEntireAamountToPayForLoan(){
