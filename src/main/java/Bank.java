@@ -29,4 +29,11 @@ public class Bank {
         }
         return tempS;
     }
+
+
+    public void clientSelectCredit(int numberOfCredit, Client client){
+        credits.get(numberOfCredit).setClient(client);
+
+
+    }
 }

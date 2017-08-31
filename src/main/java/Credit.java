@@ -17,7 +17,11 @@ public class Credit {
     }
 
     public void setClient(Client client) {
-        this.client = client;
+        if(this.client==null){
+        this.client = client;}
+        else {
+            System.out.println("This Credit already has the client");
+        }
     }
 
     public Double calculateTheEntireAamountToPayForLoan(){

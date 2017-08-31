@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 
 
 public class Banks {
-    HashSet<Bank> banks=new HashSet<Bank>();
+    ArrayList<Bank> banks = new ArrayList<Bank>();
 
     public void addBank(Bank bank) {
         this.banks.add(bank);
@@ -17,6 +16,20 @@ public class Banks {
         }
         return null;
     }
+
+    public void showJustBanks() {
+        for (int i = 0; i < banks.size(); i++) {
+            System.out.println(i + " Bank is - "+banks.get(i).bankName);
+        }
+    }
+
+    public void showJustCreditsInBank(int bankNumber) {
+        for (int i = 0; i < banks.get(bankNumber).credits.size(); i++) {
+            if(banks.get(bankNumber).credits.get(i).getClient()==null){
+            System.out.println(i+" "+  banks.get(bankNumber).credits.get(i).toString());
+        }}
+    }
+
 
     @Override
     public String toString() {
