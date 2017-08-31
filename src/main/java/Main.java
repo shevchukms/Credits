@@ -27,7 +27,7 @@ public class Main {
         anInterface.work(listOfBanks, client);
 
 
-        
+
 
     }
 }

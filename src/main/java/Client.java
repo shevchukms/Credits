@@ -1,4 +1,3 @@
-
 public class Client {
 
     PersonalDataOfClient personalDataOfClient;
@@ -8,4 +7,4 @@ public class Client {
         this.personalDataOfClient = personalDataOfClient;
     }
 
-  }
+}
