@@ -29,7 +29,7 @@ public class Interface {
                     break;
                 case "2":
                     tempCredit = selectCreditForPayment(banks, client);
-                    System.out.println("Input money "+tempCredit.amountOfPaymentPerMonth);
+                    System.out.println("Input money " + tempCredit.amountOfPaymentPerMonth);
                     selected = br.readLine();
                     tempCredit.payMoney(Double.valueOf(selected));
                     break;
@@ -41,9 +41,9 @@ public class Interface {
                     break;
                 case "4":
                     tempCredit = selectCreditForPayment(banks, client);
-                    System.out.println("Input money "+tempCredit.calculateTheEntireAamountToPayForLoan());
+                    System.out.println("Input money " + tempCredit.calculateTheEntireAamountToPayForLoan());
                     selected = br.readLine();
-                    BankSystem.makefEarlyRepayment(tempCredit,Double.parseDouble(selected));
+                    BankSystem.makefEarlyRepayment(tempCredit, Double.parseDouble(selected));
                     break;
                 case "5":
                     showAllClientCredits(banks, client);
@@ -94,8 +94,11 @@ public class Interface {
         for (int i = 0; i < banks.banks.size(); i++) {
             for (Credit credit : banks.banks.get(i).credits) {
                 if (credit.client != null & credit.client == client) {
+                    System.out.println("---------------------------------------------------------------------------------");
                     System.out.println(banks.banks.get(i).bankName);
                     System.out.println(credit.toString());
+                    System.out.println("---------------------------------------------------------------------------------");
+
                 }
             }
         }
@@ -121,8 +124,10 @@ public class Interface {
         for (int i = 0; i < banks.banks.size(); i++) {
             for (int y = 0; y < banks.banks.get(i).credits.size(); y++) {
                 if (banks.banks.get(i).credits.get(y).client != null & banks.banks.get(i).credits.get(y).client == client) {
+                    System.out.println("---------------------------------------------------------------------------------");
                     System.out.println(i + "- Number of Bank " + banks.banks.get(i).bankName);
                     System.out.println(y + " - Number Of Credit" + banks.banks.get(i).credits.get(y).toString());
+                    System.out.println("---------------------------------------------------------------------------------");
                     bankNumbers.add(i);
                     creditNumbers.add(y);
                 }

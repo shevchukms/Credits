@@ -34,7 +34,7 @@ public class Credit {
 
     public void payMoney(Double money) {
         if (this.isActive) {
-            if (money.equals(amountOfPaymentPerMonth)){
+            if (money.equals(amountOfPaymentPerMonth)|money.equals(calculateTheEntireAamountToPayForLoan())){
             valueOfPayedCreditedMoney += money;
             if (valueOfPayedCreditedMoney >= valueOfCredit) {
                 isActive = false;

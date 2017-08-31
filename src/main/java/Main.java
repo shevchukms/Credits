@@ -26,5 +26,8 @@ public class Main {
         Interface anInterface = new Interface();
         anInterface.work(listOfBanks, client);
 
+
+        
+
     }
 }

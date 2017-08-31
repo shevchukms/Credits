@@ -5,6 +5,9 @@ public class BankSystem {
             credit.getCreditSpec().setTermOfCreditingMonths(newTerm);
             credit.calculateAmountOfPaymentPerMonth();
         }
+        else{
+            System.out.println("it's impossible to change terms in this credit according to the contract");
+        }
     }
 
     public static void makefEarlyRepayment(Credit credit, Double money) {
