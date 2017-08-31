@@ -28,7 +28,7 @@ public class Credit {
     }
 
     public Double calculateTheEntireAamountToPayForLoan() {
-        return valueOfCredit - valueOfPayedCreditedMoney + valueOfCredit * (creditSpec.getInterestRate() / 100) / 12;
+        return new BigDecimal(valueOfCredit - valueOfPayedCreditedMoney + valueOfCredit * (creditSpec.getInterestRate() / 100) / 12).setScale(2, RoundingMode.UP).doubleValue();
     }
 
 
